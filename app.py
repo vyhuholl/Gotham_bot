@@ -37,13 +37,13 @@ model = unpickle_file('markov_model')
 
 app = Flask(__name__)
 
-@app.route('/127.0.0.1/')
+@app.route('/gotham-generator.herokuapp.com')
 
-@app.route('/127.0.0.1/<name>')
+@app.route('/gotham-generator.herokuapp.com/<name>')
 def main_page(name=None):
     return render_template('main_page.html')
 
-@app.route('/127.0.0.1/reply')
+@app.route('/gotham-generator.herokuapp.com/reply')
 def result_page(name=None):
     if request.args:
         reply = generate_sentence(model)
